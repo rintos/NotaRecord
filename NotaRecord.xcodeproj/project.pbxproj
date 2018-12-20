@@ -13,6 +13,7 @@
 		508C575321CBBBD50029C2D1 /* NotaRecord.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 508C575121CBBBD50029C2D1 /* NotaRecord.xcdatamodeld */; };
 		508C575521CBBBFA0029C2D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 508C575421CBBBFA0029C2D1 /* Assets.xcassets */; };
 		508C575821CBBBFA0029C2D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 508C575621CBBBFA0029C2D1 /* LaunchScreen.storyboard */; };
+		508C576021CBBFE10029C2D1 /* ListaNotaAudioTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508C575F21CBBFE10029C2D1 /* ListaNotaAudioTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		508C575421CBBBFA0029C2D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		508C575721CBBBFA0029C2D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		508C575921CBBBFA0029C2D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		508C575F21CBBFE10029C2D1 /* ListaNotaAudioTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaNotaAudioTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				508C575621CBBBFA0029C2D1 /* LaunchScreen.storyboard */,
 				508C575921CBBBFA0029C2D1 /* Info.plist */,
 				508C575121CBBBD50029C2D1 /* NotaRecord.xcdatamodeld */,
+				508C575F21CBBFE10029C2D1 /* ListaNotaAudioTableViewController.swift */,
 			);
 			path = NotaRecord;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			files = (
 				508C574D21CBBBD50029C2D1 /* ViewController.swift in Sources */,
 				508C575321CBBBD50029C2D1 /* NotaRecord.xcdatamodeld in Sources */,
+				508C576021CBBFE10029C2D1 /* ListaNotaAudioTableViewController.swift in Sources */,
 				508C574B21CBBBD50029C2D1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
