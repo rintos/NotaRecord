@@ -89,7 +89,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate,AVAudioPlayerDel
         botaoPlay.setTitle("Play", for: .normal)
     }
     
-    //o gatilho dessa funcao ativa
+    // gatilho ativa funcao
     @IBAction func gravarAction(_ sender: Any){
         if botaoGravar.titleLabel?.text == "Gravar" {
             soundRecorder.record()
@@ -128,6 +128,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate,AVAudioPlayerDel
         
         novaAudioNota.setValue(self.textoTextField.text, forKey: "texto" )
         novaAudioNota.setValue( Date(), forKey: "data")
+        novaAudioNota.setValue(fileName, forKey:"audioNome")
         
         do {
             try context.save()

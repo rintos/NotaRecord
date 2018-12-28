@@ -60,6 +60,7 @@ class ListaNotaAudioTableViewController: UITableViewController {
         let notaAudioRecuperado = self.notaAudio[indexPath.row]
         let textoRecuperado = notaAudioRecuperado.value(forKey: "texto")
         let dataRecuperada = notaAudioRecuperado.value(forKey: "data")
+        let nomeAudioRecuperado = notaAudioRecuperado.value(forKey: "audioNome")
        
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
@@ -67,7 +68,8 @@ class ListaNotaAudioTableViewController: UITableViewController {
         let novaDataRecuperada = dateFormatter.string(from: dataRecuperada as! Date)
         
         cell.textLabel?.text = textoRecuperado as? String
-        cell.detailTextLabel?.text = novaDataRecuperada
+        cell.detailTextLabel?.text = nomeAudioRecuperado as? String
+        
         
         return cell
     }
