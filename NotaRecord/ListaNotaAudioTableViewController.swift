@@ -92,8 +92,10 @@ class ListaNotaAudioTableViewController: UITableViewController {
         let notaAudioRecuperado = self.notaAudio[indexPath.row]
         let nomeAudioRecuperado = notaAudioRecuperado.value(forKey: "audioNome")
         let nome = nomeAudioRecuperado as? String
+        let caminhoAudio = notaAudioRecuperado.value(forKey: "caminho")
+        let caminho = caminhoAudio as? String
         
-         if let path = Bundle.main.path(forResource: nome , ofType: "m4a"){
+        if let path = Bundle.main.path(forAuxiliaryExecutable: caminho!){
          let url = URL(fileURLWithPath: path)
          do {
              player = try AVAudioPlayer(contentsOf: url)
@@ -102,10 +104,12 @@ class ListaNotaAudioTableViewController: UITableViewController {
          
              }catch {
              print("error")
-         }
+            }
          }
         
         print("estou selecionando a celula\(String(describing: nome))")
+        print("estou selecionando a celula\(String(describing: caminho))")
+
         
     }
     

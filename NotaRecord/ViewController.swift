@@ -29,6 +29,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate,AVAudioPlayerDel
     
     var fileName: String = "meuAudioFile3.m4a"
     var player = AVAudioPlayer()
+    var caminhoSon: String = ""    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +72,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate,AVAudioPlayerDel
             soundRecorder = try AVAudioRecorder(url: audioFilename, settings: recordSetting)
             soundRecorder.delegate = self
             soundRecorder.prepareToRecord()
+            caminhoSon = audioFilename.path
             
         } catch  {
             print(error)
@@ -142,6 +144,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate,AVAudioPlayerDel
         novaAudioNota.setValue(self.textoTextField.text, forKey: "texto" )
         novaAudioNota.setValue( Date(), forKey: "data")
         novaAudioNota.setValue(fileName, forKey:"audioNome")
+        novaAudioNota.setValue(caminhoSon, forKey: "caminho")
         
         do {
             try context.save()
