@@ -8,13 +8,15 @@
 
 import UIKit
 import CoreData
+import AVFoundation
 
 class ListaNotaAudioTableViewController: UITableViewController {
 
     var context: NSManagedObjectContext!
     var notaAudio: [NSManagedObject] = []
     
-    
+    var player = AVAudioPlayer()
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -61,7 +63,7 @@ class ListaNotaAudioTableViewController: UITableViewController {
         let textoRecuperado = notaAudioRecuperado.value(forKey: "texto")
         let dataRecuperada = notaAudioRecuperado.value(forKey: "data")
         let nomeAudioRecuperado = notaAudioRecuperado.value(forKey: "audioNome")
-       
+        
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
         
@@ -73,6 +75,8 @@ class ListaNotaAudioTableViewController: UITableViewController {
         
         return cell
     }
+    
+    
     
 
     /*

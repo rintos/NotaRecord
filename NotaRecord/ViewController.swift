@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import AVFoundation
+import Foundation
 
 class ViewController: UIViewController, AVAudioRecorderDelegate,AVAudioPlayerDelegate {
     
@@ -26,19 +27,46 @@ class ViewController: UIViewController, AVAudioRecorderDelegate,AVAudioPlayerDel
     var soundRecorder: AVAudioRecorder!
     var soundPlayer: AVAudioPlayer!
     
-    var fileName: String = "meuAudioFile.m4a"
-
+    var fileName: String = "meuAudioFile3.m4a"
+    var player = AVAudioPlayer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        func randomString(length: Int) -> String {
+            let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+            return String((0...length-1).map{ _ in letters.randomElement()! })
+        }
+        
+        let nome = randomString(length: 8)
+        fileName = "audio\(nome).m4a"
+ 
         self.textoTextField.text = ""
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         context = appDelegate.persistentContainer.viewContext
 
-        
         setupRecorder()
         botaoPlay.isEnabled = false
+
+       /* if let path = Bundle.main.path(forResource: fileName, ofType: "m4a"){
+            let url = URL(fileURLWithPath: path)
+            do {
+                player = try AVAudioPlayer(contentsOf: url)
+                player.prepareToPlay()
+                player.play()
+
+            }catch {
+                print("error")
+            }
+        }*/
+        
+
+        
+        
     }
+    
+
     
     //recupero/seto o caminho do arquivo de audio
     func getDocumentDirector() -> URL {
@@ -138,10 +166,19 @@ class ViewController: UIViewController, AVAudioRecorderDelegate,AVAudioPlayerDel
             let ok = UIAlertAction(title: "ok", style: .default, handler: nil)
             
             alerta.addAction(ok)
-                
+           
+            func randomString(length: Int) -> String {
+                let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+                return String((0...length-1).map{ _ in letters.randomElement()! })
+            }
+            
+            let nome = randomString(length: 8)
+            fileName = "audio\(nome).m4a"
+ 
             present(alerta, animated: true, completion: nil)
             
             self.textoTextField.text = ""
+            
             
         } catch let erro {
             print("Nao foi possivel salvar nota erro: \(erro)")
