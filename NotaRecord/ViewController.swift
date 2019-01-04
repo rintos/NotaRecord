@@ -48,21 +48,6 @@ class ViewController: UIViewController, AVAudioRecorderDelegate,AVAudioPlayerDel
 
         setupRecorder()
         botaoPlay.isEnabled = false
-
-       /* if let path = Bundle.main.path(forResource: fileName, ofType: "m4a"){
-            let url = URL(fileURLWithPath: path)
-            do {
-                player = try AVAudioPlayer(contentsOf: url)
-                player.prepareToPlay()
-                player.play()
-
-            }catch {
-                print("error")
-            }
-        }*/
-        
-
-        
         
     }
     

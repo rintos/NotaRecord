@@ -16,13 +16,19 @@ class ListaNotaAudioTableViewController: UITableViewController {
     var notaAudio: [NSManagedObject] = []
     
     var player = AVAudioPlayer()
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         context = appDelegate.persistentContainer.viewContext
         
+    }
+    
+    //recupero/seto o caminho do arquivo de audio
+    func getDocumentDirector() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -77,6 +83,31 @@ class ListaNotaAudioTableViewController: UITableViewController {
     }
     
     
+    
+    
+    //seleciona elemento da celula /get
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        self.tableView.deselectRow(at: indexPath, animated: true)
+        let notaAudioRecuperado = self.notaAudio[indexPath.row]
+        let nomeAudioRecuperado = notaAudioRecuperado.value(forKey: "audioNome")
+        let nome = nomeAudioRecuperado as? String
+        
+         if let path = Bundle.main.path(forResource: nome , ofType: "m4a"){
+         let url = URL(fileURLWithPath: path)
+         do {
+             player = try AVAudioPlayer(contentsOf: url)
+             player.prepareToPlay()
+             player.play()
+         
+             }catch {
+             print("error")
+         }
+         }
+        
+        print("estou selecionando a celula\(String(describing: nome))")
+        
+    }
     
 
     /*
