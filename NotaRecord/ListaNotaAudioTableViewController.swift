@@ -40,6 +40,9 @@ class ListaNotaAudioTableViewController: UITableViewController {
         
         let requisicao = NSFetchRequest<NSFetchRequestResult>(entityName: "NotaAudio")
         
+        let ordenar = NSSortDescriptor(key: "data", ascending: false)
+        requisicao.sortDescriptors = [ordenar]
+        
         do {
           let notaRecuperada = try context.fetch(requisicao)
           self.notaAudio = notaRecuperada as! [NSManagedObject]
@@ -77,35 +80,44 @@ class ListaNotaAudioTableViewController: UITableViewController {
         
         cell.textLabel?.text = textoRecuperado as? String
         cell.detailTextLabel?.text = nomeAudioRecuperado as? String
-        
-        
+    
         return cell
     }
     
+    /*
+     self.tableView.deselectRow(at: indexPath, animated: true)
+     
+     let indice = indexPath.row
+     let anotacao = self.anotacoes[indice]
+     */
     
-    
+    func executaAudio(caminho: String){
+        if let path = Bundle.main.path(forAuxiliaryExecutable: caminho){
+            let url = URL(fileURLWithPath: path)
+            do {
+                player = try AVAudioPlayer(contentsOf: url)
+                player.prepareToPlay()
+                player.play()
+                
+            } catch let erro {
+                print("Nao foi possivel executar audio erro: \(erro)")
+            }
+        }
+
+    }
     
     //seleciona elemento da celula /get
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         self.tableView.deselectRow(at: indexPath, animated: true)
-        let notaAudioRecuperado = self.notaAudio[indexPath.row]
-        let nomeAudioRecuperado = notaAudioRecuperado.value(forKey: "audioNome")
+        let indice = indexPath.row
+        let notas = self.notaAudio[indice]
+        let nomeAudioRecuperado = notas.value(forKey: "audioNome")
         let nome = nomeAudioRecuperado as? String
-        let caminhoAudio = notaAudioRecuperado.value(forKey: "caminho")
+        let caminhoAudio = notas.value(forKey: "caminho")
         let caminho = caminhoAudio as? String
         
-        if let path = Bundle.main.path(forAuxiliaryExecutable: caminho!){
-         let url = URL(fileURLWithPath: path)
-         do {
-             player = try AVAudioPlayer(contentsOf: url)
-             player.prepareToPlay()
-             player.play()
-         
-             }catch {
-             print("error")
-            }
-         }
+        executaAudio(caminho: caminho!)
         
         print("estou selecionando a celula\(String(describing: nome))")
         print("estou selecionando a celula\(String(describing: caminho))")
@@ -113,7 +125,26 @@ class ListaNotaAudioTableViewController: UITableViewController {
         
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            let indice = indexPath.row
+            let notasAudio = self.notaAudio[indice]
+            
+            self.context.delete(notasAudio)
+            self.notaAudio.remove(at: indice)
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            do{
+                try context.save()
+                print("Removido com sucesso")
+            }catch {
+                print("Erro ao remover")
+            }
 
+        }
+    }
+    
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

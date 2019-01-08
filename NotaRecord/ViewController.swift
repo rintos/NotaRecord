@@ -17,6 +17,8 @@ class ViewController: UIViewController, AVAudioRecorderDelegate,AVAudioPlayerDel
     var notaAudio: NSManagedObject!
     
     
+    
+    
     @IBOutlet weak var textoTextField: UITextField!
 
     @IBOutlet weak var botaoGravar: UIButton!
@@ -27,9 +29,9 @@ class ViewController: UIViewController, AVAudioRecorderDelegate,AVAudioPlayerDel
     var soundRecorder: AVAudioRecorder!
     var soundPlayer: AVAudioPlayer!
     
-    var fileName: String = "meuAudioFile3.m4a"
+    var fileName: String = ""
     var player = AVAudioPlayer()
-    var caminhoSon: String = ""    
+    var caminhoSon: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +40,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate,AVAudioPlayerDel
             let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
             return String((0...length-1).map{ _ in letters.randomElement()! })
         }
-        
+
         let nome = randomString(length: 8)
         fileName = "audio\(nome).m4a"
  
@@ -52,6 +54,11 @@ class ViewController: UIViewController, AVAudioRecorderDelegate,AVAudioPlayerDel
         
     }
     
+    //quando termina de salvar eh necessario criar novamente o caminho do arquivo
+    override func viewDidAppear(_ animated: Bool) {
+        setupRecorder()
+        botaoPlay.isEnabled = false
+    }
 
     
     //recupero/seto o caminho do arquivo de audio
@@ -72,7 +79,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate,AVAudioPlayerDel
             soundRecorder = try AVAudioRecorder(url: audioFilename, settings: recordSetting)
             soundRecorder.delegate = self
             soundRecorder.prepareToRecord()
-            caminhoSon = audioFilename.path
+            caminhoSon = audioFilename.relativePath //add endereco do mp3 na variavel
             
         } catch  {
             print(error)
@@ -133,7 +140,6 @@ class ViewController: UIViewController, AVAudioRecorderDelegate,AVAudioPlayerDel
  
     @IBAction func salvar(_ sender: Any?) {
         salvarNotaAudio()
-        
     }
 
     
@@ -143,8 +149,8 @@ class ViewController: UIViewController, AVAudioRecorderDelegate,AVAudioPlayerDel
         
         novaAudioNota.setValue(self.textoTextField.text, forKey: "texto" )
         novaAudioNota.setValue( Date(), forKey: "data")
-        novaAudioNota.setValue(fileName, forKey:"audioNome")
-        novaAudioNota.setValue(caminhoSon, forKey: "caminho")
+        novaAudioNota.setValue(self.fileName, forKey:"audioNome")
+        novaAudioNota.setValue(self.caminhoSon, forKey: "caminho")
         
         do {
             try context.save()
@@ -154,7 +160,12 @@ class ViewController: UIViewController, AVAudioRecorderDelegate,AVAudioPlayerDel
             let ok = UIAlertAction(title: "ok", style: .default, handler: nil)
             
             alerta.addAction(ok)
-           
+ 
+            present(alerta, animated: true, completion: nil)
+            
+            self.textoTextField.text = ""
+            
+            
             func randomString(length: Int) -> String {
                 let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
                 return String((0...length-1).map{ _ in letters.randomElement()! })
@@ -162,10 +173,8 @@ class ViewController: UIViewController, AVAudioRecorderDelegate,AVAudioPlayerDel
             
             let nome = randomString(length: 8)
             fileName = "audio\(nome).m4a"
- 
-            present(alerta, animated: true, completion: nil)
-            
-            self.textoTextField.text = ""
+
+            dismiss(animated: true, completion: nil)
             
             
         } catch let erro {
@@ -173,12 +182,6 @@ class ViewController: UIViewController, AVAudioRecorderDelegate,AVAudioPlayerDel
         }
         
     }
-    
-    
-    
-    
-    
-    
     
     
     
