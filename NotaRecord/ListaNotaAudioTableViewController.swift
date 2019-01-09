@@ -16,6 +16,8 @@ class ListaNotaAudioTableViewController: UITableViewController {
     var notaAudio: [NSManagedObject] = []
     
     var player = AVAudioPlayer()
+    let fileManager = FileManager.default
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -129,12 +131,15 @@ class ListaNotaAudioTableViewController: UITableViewController {
         if editingStyle == UITableViewCell.EditingStyle.delete {
             let indice = indexPath.row
             let notasAudio = self.notaAudio[indice]
+            let endereco = notasAudio.value(forKey: "caminho")
+            let caminho = endereco as? String
             
             self.context.delete(notasAudio)
             self.notaAudio.remove(at: indice)
             self.tableView.deleteRows(at: [indexPath], with: .fade)
-            
+        
             do{
+                try fileManager.removeItem(atPath: caminho!)
                 try context.save()
                 print("Removido com sucesso")
             }catch {

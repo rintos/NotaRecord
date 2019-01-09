@@ -14,9 +14,7 @@ import Foundation
 class ViewController: UIViewController, AVAudioRecorderDelegate,AVAudioPlayerDelegate {
     
     var context: NSManagedObjectContext!
-    var notaAudio: NSManagedObject!
-    
-    
+    var notaAudio: NSManagedObject!    
     
     
     @IBOutlet weak var textoTextField: UITextField!
