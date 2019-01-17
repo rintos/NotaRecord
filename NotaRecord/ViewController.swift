@@ -23,6 +23,8 @@ class ViewController: UIViewController, AVAudioRecorderDelegate,AVAudioPlayerDel
     
     @IBOutlet weak var botaoPlay: UIButton!
     
+    @IBOutlet weak var botaoSalvar: UIButton!
+    
     //variavel do tipo Audio
     var soundRecorder: AVAudioRecorder!
     var soundPlayer: AVAudioPlayer!
@@ -50,8 +52,18 @@ class ViewController: UIViewController, AVAudioRecorderDelegate,AVAudioPlayerDel
         setupRecorder()
         botaoPlay.isEnabled = false
         
+        botaoGravar.layer.borderWidth = 0.5
+        botaoGravar.layer.cornerRadius = 8
+        botaoPlay.layer.borderWidth = 0.5
+        botaoPlay.layer.cornerRadius = 8
+        botaoSalvar.layer.borderWidth = 0.5
+        botaoSalvar.layer.cornerRadius = 8
+        botaoGravar.layer.borderColor = UIColor(red: 85.0/255.0, green: 85.0/255.0, blue: 85.0/255.0, alpha: 1).cgColor
+        botaoPlay.layer.borderColor = UIColor(red: 85.0/255.0, green: 85.0/255.0, blue: 85.0/255.0, alpha: 1).cgColor
+        botaoSalvar.layer.borderColor = UIColor(red: 85.0/255.0, green: 85.0/255.0, blue: 85.0/255.0, alpha: 1).cgColor
     }
     
+    // cria diretorio de arquivo
     //quando termina de salvar eh necessario criar novamente o caminho do arquivo
     override func viewDidAppear(_ animated: Bool) {
         setupRecorder()
@@ -174,6 +186,9 @@ class ViewController: UIViewController, AVAudioRecorderDelegate,AVAudioPlayerDel
 
             dismiss(animated: true, completion: nil)
             
+            // cria diretorio de arquivo //ajuda no ciclo de vida para gravar e reproduzir arquivo conforme necessidade do app
+            setupRecorder()
+            botaoPlay.isEnabled = false
             
         } catch let erro {
             print("Nao foi possivel salvar nota erro: \(erro)")

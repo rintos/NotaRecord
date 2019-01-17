@@ -37,7 +37,6 @@ class ListaNotaAudioTableViewController: UITableViewController {
         recuperaNotas()
     }
 
-
     func recuperaNotas(){
         
         let requisicao = NSFetchRequest<NSFetchRequestResult>(entityName: "NotaAudio")
@@ -55,7 +54,6 @@ class ListaNotaAudioTableViewController: UITableViewController {
         
     }
     
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -66,7 +64,6 @@ class ListaNotaAudioTableViewController: UITableViewController {
         return notaAudio.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "celulaNota", for: indexPath)
 
@@ -85,13 +82,6 @@ class ListaNotaAudioTableViewController: UITableViewController {
     
         return cell
     }
-    
-    /*
-     self.tableView.deselectRow(at: indexPath, animated: true)
-     
-     let indice = indexPath.row
-     let anotacao = self.anotacoes[indice]
-     */
     
     func executaAudio(caminho: String){
         if let path = Bundle.main.path(forAuxiliaryExecutable: caminho){
