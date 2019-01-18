@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		500B035321E8066E00C9285A /* Notas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500B035221E8066E00C9285A /* Notas.swift */; };
-		504D219221E57963006773CF /* EditarNotaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504D219121E57963006773CF /* EditarNotaViewController.swift */; };
 		508C574B21CBBBD50029C2D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508C574A21CBBBD50029C2D1 /* AppDelegate.swift */; };
 		508C574D21CBBBD50029C2D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508C574C21CBBBD50029C2D1 /* ViewController.swift */; };
 		508C575021CBBBD50029C2D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 508C574E21CBBBD50029C2D1 /* Main.storyboard */; };
@@ -19,8 +17,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		500B035221E8066E00C9285A /* Notas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notas.swift; sourceTree = "<group>"; };
-		504D219121E57963006773CF /* EditarNotaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarNotaViewController.swift; sourceTree = "<group>"; };
 		508C574721CBBBD50029C2D1 /* NotaRecord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotaRecord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		508C574A21CBBBD50029C2D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		508C574C21CBBBD50029C2D1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,8 +66,6 @@
 				508C575921CBBBFA0029C2D1 /* Info.plist */,
 				508C575121CBBBD50029C2D1 /* NotaRecord.xcdatamodeld */,
 				508C575F21CBBFE10029C2D1 /* ListaNotaAudioTableViewController.swift */,
-				504D219121E57963006773CF /* EditarNotaViewController.swift */,
-				500B035221E8066E00C9285A /* Notas.swift */,
 			);
 			path = NotaRecord;
 			sourceTree = "<group>";
@@ -150,8 +144,6 @@
 			files = (
 				508C574D21CBBBD50029C2D1 /* ViewController.swift in Sources */,
 				508C575321CBBBD50029C2D1 /* NotaRecord.xcdatamodeld in Sources */,
-				504D219221E57963006773CF /* EditarNotaViewController.swift in Sources */,
-				500B035321E8066E00C9285A /* Notas.swift in Sources */,
 				508C576021CBBFE10029C2D1 /* ListaNotaAudioTableViewController.swift in Sources */,
 				508C574B21CBBBD50029C2D1 /* AppDelegate.swift in Sources */,
 			);
@@ -306,7 +298,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.vsantoryu.NotaRecord;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -323,7 +315,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.vsantoryu.NotaRecord;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

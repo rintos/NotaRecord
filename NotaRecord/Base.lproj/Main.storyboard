@@ -18,37 +18,72 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mkW-dp-pL6">
-                                <rect key="frame" x="84" y="145" width="220" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Titulo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bq-kv-JET">
-                                <rect key="frame" x="16" y="150" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewt-Ch-cl7">
-                                <rect key="frame" x="46" y="247" width="85" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="69j-Be-fJD">
+                                <rect key="frame" x="10" y="144" width="307" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titulo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bq-kv-JET">
+                                        <rect key="frame" x="0.0" y="0.0" width="42" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="qHX-Mz-Wgz"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mkW-dp-pL6">
+                                        <rect key="frame" x="68" y="0.0" width="239" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="MTW-uO-2ph"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="47" translatesAutoresizingMaskIntoConstraints="NO" id="dj5-e5-8ON">
+                                <rect key="frame" x="40" y="264" width="247" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewt-Ch-cl7">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="FDZ-eW-j7A"/>
+                                            <constraint firstAttribute="width" constant="100" id="Z6i-RI-2hZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                        <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <state key="normal" title="Gravar">
+                                            <color key="titleColor" red="0.91035276649999997" green="0.28153651950000003" blue="0.27346369619999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="gravarAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lcg-f2-ROa"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9U-jE-Lv5">
+                                        <rect key="frame" x="147" y="0.0" width="100" height="50"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="1VH-Kg-6nm"/>
+                                            <constraint firstAttribute="width" constant="100" id="gpe-Wa-AYR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                        <state key="normal" title="Play">
+                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="playAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JWk-Q0-jo8"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bEG-0h-GtS">
+                                <rect key="frame" x="113.5" y="424" width="100" height="50"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
-                                <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <state key="normal" title="Gravar">
-                                    <color key="titleColor" red="0.91035276649999997" green="0.28153651950000003" blue="0.27346369619999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="gravarAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lcg-f2-ROa"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bEG-0h-GtS">
-                                <rect key="frame" x="85" y="390" width="150" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="mP2-kq-LfO"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="stQ-tG-2bn"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
                                 <state key="normal" title="Salvar">
                                     <color key="titleColor" red="0.40065363050000002" green="0.82080882789999998" blue="0.005871975806" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -57,20 +92,18 @@
                                     <action selector="salvar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XCL-pM-UU4"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9U-jE-Lv5">
-                                <rect key="frame" x="178" y="247" width="85" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
-                                <state key="normal" title="Play">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="playAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JWk-Q0-jo8"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.91772931814193726" green="0.63067036290322576" blue="0.019405241935483871" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dj5-e5-8ON" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="71T-CB-iQR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="69j-Be-fJD" secondAttribute="trailing" constant="10" id="ddh-oU-ocv"/>
+                            <constraint firstItem="69j-Be-fJD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="ga9-6v-poC"/>
+                            <constraint firstItem="69j-Be-fJD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="mGf-yN-N3L"/>
+                            <constraint firstItem="dj5-e5-8ON" firstAttribute="top" secondItem="69j-Be-fJD" secondAttribute="bottom" constant="70" id="mT7-5c-qGT"/>
+                            <constraint firstItem="bEG-0h-GtS" firstAttribute="top" secondItem="dj5-e5-8ON" secondAttribute="bottom" constant="110" id="nqv-Ub-4Z3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dj5-e5-8ON" secondAttribute="trailing" constant="40" id="xbZ-Gg-8Fa"/>
+                            <constraint firstItem="bEG-0h-GtS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yoa-tf-NHg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Criar Nota" id="skd-AS-qkf">
@@ -83,7 +116,7 @@
                     <connections>
                         <outlet property="botaoGravar" destination="ewt-Ch-cl7" id="g3Q-W5-OW8"/>
                         <outlet property="botaoPlay" destination="O9U-jE-Lv5" id="Wfp-Ws-qje"/>
-                        <outlet property="botaoSalvar" destination="bEG-0h-GtS" id="Oe6-oi-BXX"/>
+                        <outlet property="botaoSalvar" destination="bEG-0h-GtS" id="99N-b9-N3u"/>
                         <outlet property="textoTextField" destination="mkW-dp-pL6" id="ZfT-QX-Vax"/>
                     </connections>
                 </viewController>
@@ -135,21 +168,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5V2-Sk-0BF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1818" y="132"/>
-        </scene>
-        <!--Editar Nota View Controller-->
-        <scene sceneID="pn9-MO-1Of">
-            <objects>
-                <viewController id="Sb5-0F-GqH" customClass="EditarNotaViewController" customModule="NotaRecord" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="dnG-Yg-6pi">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="PUh-m7-yLf"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1rV-Z3-dDP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2573" y="131"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="koc-py-Asy">

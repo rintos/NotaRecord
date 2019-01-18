@@ -56,11 +56,8 @@ class ViewController: UIViewController, AVAudioRecorderDelegate,AVAudioPlayerDel
         botaoGravar.layer.cornerRadius = 8
         botaoPlay.layer.borderWidth = 0.5
         botaoPlay.layer.cornerRadius = 8
-        botaoSalvar.layer.borderWidth = 0.5
         botaoSalvar.layer.cornerRadius = 8
-        botaoGravar.layer.borderColor = UIColor(red: 85.0/255.0, green: 85.0/255.0, blue: 85.0/255.0, alpha: 1).cgColor
-        botaoPlay.layer.borderColor = UIColor(red: 85.0/255.0, green: 85.0/255.0, blue: 85.0/255.0, alpha: 1).cgColor
-        botaoSalvar.layer.borderColor = UIColor(red: 85.0/255.0, green: 85.0/255.0, blue: 85.0/255.0, alpha: 1).cgColor
+        
     }
     
     // cria diretorio de arquivo
