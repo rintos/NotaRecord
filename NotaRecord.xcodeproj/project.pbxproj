@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		500230A9220280FC001BF464 /* NotasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500230A8220280FB001BF464 /* NotasViewController.swift */; };
 		508C574B21CBBBD50029C2D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508C574A21CBBBD50029C2D1 /* AppDelegate.swift */; };
 		508C575321CBBBD50029C2D1 /* NotaRecord.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 508C575121CBBBD50029C2D1 /* NotaRecord.xcdatamodeld */; };
 		508C575521CBBBFA0029C2D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 508C575421CBBBFA0029C2D1 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		500230A8220280FB001BF464 /* NotasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotasViewController.swift; sourceTree = "<group>"; };
 		508C574721CBBBD50029C2D1 /* NotaRecord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotaRecord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		508C574A21CBBBD50029C2D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		508C575221CBBBD50029C2D1 /* NotaRecord.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NotaRecord.xcdatamodel; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			children = (
 				50F20D4F21F1F3AC00C79677 /* ViewController.swift */,
 				50F20D5121F1F3B700C79677 /* ListaNotaAudioTableViewController.swift */,
+				500230A8220280FB001BF464 /* NotasViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				500230A9220280FC001BF464 /* NotasViewController.swift in Sources */,
 				50F20D5021F1F3AD00C79677 /* ViewController.swift in Sources */,
 				508C575321CBBBD50029C2D1 /* NotaRecord.xcdatamodeld in Sources */,
 				50F20D5221F1F3B700C79677 /* ListaNotaAudioTableViewController.swift in Sources */,
