@@ -8,24 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		508C574B21CBBBD50029C2D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508C574A21CBBBD50029C2D1 /* AppDelegate.swift */; };
-		508C574D21CBBBD50029C2D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508C574C21CBBBD50029C2D1 /* ViewController.swift */; };
-		508C575021CBBBD50029C2D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 508C574E21CBBBD50029C2D1 /* Main.storyboard */; };
 		508C575321CBBBD50029C2D1 /* NotaRecord.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 508C575121CBBBD50029C2D1 /* NotaRecord.xcdatamodeld */; };
 		508C575521CBBBFA0029C2D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 508C575421CBBBFA0029C2D1 /* Assets.xcassets */; };
 		508C575821CBBBFA0029C2D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 508C575621CBBBFA0029C2D1 /* LaunchScreen.storyboard */; };
-		508C576021CBBFE10029C2D1 /* ListaNotaAudioTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508C575F21CBBFE10029C2D1 /* ListaNotaAudioTableViewController.swift */; };
+		50F20D5021F1F3AD00C79677 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F20D4F21F1F3AC00C79677 /* ViewController.swift */; };
+		50F20D5221F1F3B700C79677 /* ListaNotaAudioTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F20D5121F1F3B700C79677 /* ListaNotaAudioTableViewController.swift */; };
+		50F20D5421F1F49B00C79677 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50F20D5321F1F49B00C79677 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		508C574721CBBBD50029C2D1 /* NotaRecord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotaRecord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		508C574A21CBBBD50029C2D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		508C574C21CBBBD50029C2D1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		508C574F21CBBBD50029C2D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		508C575221CBBBD50029C2D1 /* NotaRecord.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NotaRecord.xcdatamodel; sourceTree = "<group>"; };
 		508C575421CBBBFA0029C2D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		508C575721CBBBFA0029C2D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		508C575921CBBBFA0029C2D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		508C575F21CBBFE10029C2D1 /* ListaNotaAudioTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaNotaAudioTableViewController.swift; sourceTree = "<group>"; };
+		50F20D4F21F1F3AC00C79677 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		50F20D5121F1F3B700C79677 /* ListaNotaAudioTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaNotaAudioTableViewController.swift; sourceTree = "<group>"; };
+		50F20D5321F1F49B00C79677 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +58,40 @@
 		508C574921CBBBD50029C2D1 /* NotaRecord */ = {
 			isa = PBXGroup;
 			children = (
+				50F20D4D21F1F30C00C79677 /* ViewController */,
+				50F20D4C21F1F2FF00C79677 /* View */,
+				50F20D4B21F1F2EA00C79677 /* Model */,
 				508C574A21CBBBD50029C2D1 /* AppDelegate.swift */,
-				508C574C21CBBBD50029C2D1 /* ViewController.swift */,
-				508C574E21CBBBD50029C2D1 /* Main.storyboard */,
 				508C575421CBBBFA0029C2D1 /* Assets.xcassets */,
 				508C575621CBBBFA0029C2D1 /* LaunchScreen.storyboard */,
 				508C575921CBBBFA0029C2D1 /* Info.plist */,
 				508C575121CBBBD50029C2D1 /* NotaRecord.xcdatamodeld */,
-				508C575F21CBBFE10029C2D1 /* ListaNotaAudioTableViewController.swift */,
 			);
 			path = NotaRecord;
+			sourceTree = "<group>";
+		};
+		50F20D4B21F1F2EA00C79677 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		50F20D4C21F1F2FF00C79677 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				50F20D5321F1F49B00C79677 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		50F20D4D21F1F30C00C79677 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				50F20D4F21F1F3AC00C79677 /* ViewController.swift */,
+				50F20D5121F1F3B700C79677 /* ListaNotaAudioTableViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,9 +153,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50F20D5421F1F49B00C79677 /* Main.storyboard in Resources */,
 				508C575821CBBBFA0029C2D1 /* LaunchScreen.storyboard in Resources */,
 				508C575521CBBBFA0029C2D1 /* Assets.xcassets in Resources */,
-				508C575021CBBBD50029C2D1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,9 +166,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				508C574D21CBBBD50029C2D1 /* ViewController.swift in Sources */,
+				50F20D5021F1F3AD00C79677 /* ViewController.swift in Sources */,
 				508C575321CBBBD50029C2D1 /* NotaRecord.xcdatamodeld in Sources */,
-				508C576021CBBFE10029C2D1 /* ListaNotaAudioTableViewController.swift in Sources */,
+				50F20D5221F1F3B700C79677 /* ListaNotaAudioTableViewController.swift in Sources */,
 				508C574B21CBBBD50029C2D1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -152,14 +176,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		508C574E21CBBBD50029C2D1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				508C574F21CBBBD50029C2D1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		508C575621CBBBFA0029C2D1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
