@@ -32,8 +32,7 @@ class NotasViewController: UIViewController {
     
     @IBAction func salvar(){
         self.atualizarNota()
-        
-        self.navigationController?.popToRootViewController(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
 
     func atualizarNota(){
