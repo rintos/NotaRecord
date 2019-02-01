@@ -30,6 +30,22 @@ class NotasViewController: UIViewController {
         
     }
     
+    @IBAction func salvar(){
+        self.atualizarNota()
+        
+        self.navigationController?.popToRootViewController(animated: true)
+    }
 
+    func atualizarNota(){
+        notas.setValue(self.texto.text, forKey: "texto")
+        notas.setValue(Date(), forKey: "data")
+        
+        do{
+            try self.context.save()
+            print("Atuallizado com sucesso")
+        }catch {
+            print("Erro ao atualizar")
+        }
+    }
 
 }
